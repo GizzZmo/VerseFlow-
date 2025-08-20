@@ -1,0 +1,5 @@
+{
+  "name": "VerseFlow Architecture Visualizer",
+  "description": "An interactive web application to explore the proposed software architecture for the VerseFlow platform, detailing the languages, frameworks, and paradigms for each component.",
+  "requestFramePermissions": []
+}
