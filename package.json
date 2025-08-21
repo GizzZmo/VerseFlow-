@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit",
+    "lint": "echo 'Linting placeholder - add ESLint if needed'",
+    "test": "echo 'Tests placeholder - add testing framework if needed'"
   },
   "dependencies": {
     "react-dom": "^19.1.1",
