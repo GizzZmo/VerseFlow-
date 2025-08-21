@@ -179,12 +179,77 @@ export const ARCHITECTURE_DATA: ArchitectureData = [
         component: "Web Application",
         tech: "TypeScript & Next.js",
         icon: React.createElement(ReactIcon),
-        paradigm: "Component-based architecture description..."
+        paradigm: "Modern React application built with TypeScript for type safety and maintainability. Uses component-based architecture with reusable UI components, state management, and responsive design patterns. Implements server-side rendering with Next.js for improved SEO and performance."
       },
-      // ... more items
+      {
+        id: "mobile-app",
+        component: "Mobile Applications (iOS & Android)",
+        tech: "Dart & Flutter",
+        icon: React.createElement(FlutterIcon),
+        paradigm: "Cross-platform mobile development using Flutter framework. Single codebase for both iOS and Android platforms, with native performance and platform-specific UI adaptations. Implements reactive programming patterns and state management."
+      }
     ]
   },
-  // ... more sections
+  {
+    title: "Backend Suite (Server-Side Microservices)",
+    color: "bg-emerald-400",
+    items: [
+      {
+        id: "core-api",
+        component: "Core API & User Services",
+        tech: "Go (Golang)",
+        icon: React.createElement(GoIcon),
+        paradigm: "High-performance REST API built with Go. Implements clean architecture patterns, dependency injection, and comprehensive middleware for authentication, logging, and error handling."
+      },
+      {
+        id: "audio-processing",
+        component: "Audio Processing & Streaming",
+        tech: "Rust",
+        icon: React.createElement(RustIcon),
+        paradigm: "Memory-safe audio processing service using Rust. Handles media transcoding, waveform generation, and real-time audio streaming with zero-copy optimizations."
+      }
+    ]
+  },
+  {
+    title: "Data & Persistence Layer",
+    color: "bg-purple-400",
+    items: [
+      {
+        id: "postgresql",
+        component: "Primary Relational Database",
+        tech: "PostgreSQL",
+        icon: React.createElement(PostgreSQLIcon),
+        paradigm: "ACID-compliant relational database with advanced features like JSON support, full-text search, and custom data types for music metadata storage."
+      },
+      {
+        id: "elasticsearch",
+        component: "Search & Discovery Database",
+        tech: "Elasticsearch",
+        icon: React.createElement(ElasticsearchIcon),
+        paradigm: "Distributed search engine for music discovery, recommendation algorithms, and real-time analytics with advanced querying capabilities."
+      }
+    ]
+  },
+  {
+    title: "Infrastructure & DevOps",
+    color: "bg-orange-400",
+    items: [
+      {
+        id: "kubernetes",
+        component: "Containerization & Orchestration",
+        tech: "Docker & Kubernetes",
+        icon: React.createElement(KubernetesIcon),
+        paradigm: "Container orchestration platform for microservices deployment, auto-scaling, and service mesh management with zero-downtime deployments."
+      },
+      {
+        id: "terraform",
+        component: "Infrastructure as Code (IaC)",
+        tech: "Terraform",
+        icon: React.createElement(TerraformIcon),
+        paradigm: "Declarative infrastructure provisioning with version control, enabling reproducible and scalable cloud resource management."
+      }
+    ]
+  }
 ];
 ```
 

@@ -21,7 +21,22 @@ The project is configured for automatic deployment to GitHub Pages via GitHub Ac
    // vite.config.ts
    export default defineConfig({
      base: '/VerseFlow-/', // Your repository name
-     // ... other config
+     plugins: [react()],
+     build: {
+       outDir: 'dist',
+       rollupOptions: {
+         output: {
+           manualChunks: {
+             vendor: ['react', 'react-dom'],
+             utils: ['./src/utils']
+           }
+         }
+       }
+     },
+     server: {
+       port: 5173,
+       open: true
+     }
    });
    ```
 
@@ -678,8 +693,23 @@ jobs:
     - uses: actions/checkout@v4
     - name: Deploy to staging
       run: |
-        # Deploy to staging environment
-        echo "Deploying to staging..."
+        # Install dependencies
+        npm ci
+        
+        # Run tests
+        npm run type-check
+        
+        # Build for staging
+        NODE_ENV=staging npm run build
+        
+        # Deploy to staging server
+        echo "Deploying to staging environment..."
+        
+        # Example: Deploy to S3 staging bucket
+        # aws s3 sync dist/ s3://staging-bucket --delete
+        
+        # Example: Deploy to staging server via SSH
+        # rsync -avz dist/ user@staging-server:/var/www/html/
 ```
 
 ## 🔧 Troubleshooting
