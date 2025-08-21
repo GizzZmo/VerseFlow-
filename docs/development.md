@@ -150,7 +150,7 @@ export default ExampleComponent;
      component: 'New Component Name',
      tech: 'Technology Used',
      icon: React.createElement(TechIcon),
-     paradigm: 'Detailed explanation of the component...'
+     paradigm: 'Comprehensive explanation of how this component fits into the overall architecture. Include its responsibilities, technology choices, design patterns used, performance characteristics, and how it integrates with other services. Explain the rationale behind technology selection and any architectural trade-offs made.'
    }
    ```
 
@@ -161,7 +161,7 @@ export default ExampleComponent;
      className = "h-12 w-12 text-blue-500" 
    }) => (
      <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-       {/* SVG path data */}
+       <path d="M12 2L2 7V10C2 16 6 20.5 12 22C18 20.5 22 16 22 10V7L12 2Z" />
      </svg>
    );
    ```

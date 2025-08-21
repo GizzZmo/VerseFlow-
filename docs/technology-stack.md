@@ -1245,8 +1245,21 @@ jobs:
     - uses: actions/checkout@v4
     - name: Deploy to Kubernetes
       run: |
-        echo "Deploying to production..."
-        # kubectl commands would go here
+        # Set up kubectl
+        echo "${{ secrets.KUBE_CONFIG }}" | base64 -d > kubeconfig
+        export KUBECONFIG=kubeconfig
+        
+        # Update deployment with new image
+        kubectl set image deployment/verseflow-app \
+          verseflow-app=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+        
+        # Wait for rollout to complete
+        kubectl rollout status deployment/verseflow-app
+        
+        # Verify deployment
+        kubectl get pods -l app=verseflow-app
+        
+        echo "Production deployment completed successfully!"
 ```
 
 ---
